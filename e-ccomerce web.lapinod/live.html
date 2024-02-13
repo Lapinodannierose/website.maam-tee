@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Wellcome To My Live</title>
+  <style>
+    .product {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .product img {
+      width: 500px;
+      height: 500px;
+      margin-right: 10px;
+    }
+    .product-info {
+      font-size: 16px;
+    }
+    .chat-container {
+      max-width: 500px;
+      margin-top: 20px;
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+    .chat-message {
+      margin-bottom: 10px;
+    }
+    .input-container {
+      display: flex;
+      margin-top: 20px;
+    }
+    .input-container input {
+      flex: 1;
+      padding: 5px;
+    }
+    .input-container button {
+      padding: 5px 10px;
+      margin-left: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome To My Live Selling</h1>
+  
+  <div class="product">
+    <img src="selling-1.jpg" alt="Product Image">
+    <div class="product-info">
+      <h2>Wedding Gown</h2>
+      <p>Price: $7,800</p>
+    </div>
+  </div>
+  <div class="chat-container">
+    <div class="chat-message">
+      <strong>User1:</strong> Is the product still available?
+    </div>
+    <div class="chat-message">
+      <strong>Seller:</strong> Yes, it's still available.
+    </div>
+    <div class="chat-message">
+      <strong>User2:</strong> Can you provide more details about the product?
+    </div>
+    <div class="chat-message">
+      <strong>Seller:</strong> Certainly! The product is made of high-quality materials and comes with a warranty.
+    </div>
+    <!-- Add more chat messages dynamically using JavaScript -->
+  </div>
+  
+  <div class="input-container">
+    <input type="text" id="messageInput" placeholder="Type your message">
+    <button onclick="sendMessage()">Send</button>
+  </div>
+  
+  <script>
+    function sendMessage() {
+      var messageInput = document.getElementById('messageInput');
+      var message = messageInput.value;
+      
+      if (message.trim() !== '') {
+        var chatContainer = document.querySelector('.chat-container');
+        var chatMessage = document.createElement('div');
+        chatMessage.classList.add('chat-message');
+        chatMessage.innerHTML = '<strong>User:</strong> ' + message;
+        chatContainer.appendChild(chatMessage);
+        
+        messageInput.value = '';
+      }
+    }
+  </script>
+</body>
+</html>
